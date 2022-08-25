@@ -1,0 +1,24 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+
+               
+                 <section style="width: 100%; display:flex;flex-direction:column; justify-content:center; align-items:center;">
+
+                              <h5 class="modal-title" id="exampleModalLabel" style="color: blue;">Update product </h5>
+                            
+                              <form method="POST" enctype="multipart/form-data" >
+                                    {% csrf_token %}
+                                <input type="text" name="name" id="name" placeholder="Enter the name of your product" value="{{products.name}}" > <br> <br>
+                                <input type="number" name="prize" id="prize" placeholder="Enter product prize"value="{{products.prize}}" > <br> <br>
+                                <input type="text" name="sex" id="sex" placeholder="Enter product sex" value="{{products.sex}}"> <br> <br>
+                                 <img src="{{ products.image.url }}" alt="">
+                                    <br> <br>
+                                <input type="file" name="upload"  accept="image/*" id="upload" placeholder="Enter product image" >
+                                    <br> <br>
+                                <input type="submit" value="ADD PRODUCT" style="border: none; background-color:rgb(67, 232, 38); color: white; width: 30%; padding: 2%; border-radius: 10px;">
+                              </form>
+                 </section>     
+                          
+
+{% endblock%}

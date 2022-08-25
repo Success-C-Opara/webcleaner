@@ -1,0 +1,46 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+
+    {% block content %}
+    <section id="cards">
+        
+        <div class="container">
+            <div class="row">
+                {% for product in product %}
+                <a href="/detail/{{product.id}}">
+                
+                <div class="col-md-4 ">
+                    <div class="card" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">  <img src="{{ product.image.url }}" alt="" width="100%" height="100%">
+                          </li>
+                          
+                        </ul>
+                    
+                      </div>
+                </div>
+               
+            </a>
+                {% endfor %}
+            </div>
+        </div>
+   
+      
+
+<div class="button">
+
+</div>
+    </section>
+  
+  
+    
+
+    {% endblock %}
+
+    
+
+
+
+
+

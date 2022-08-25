@@ -1,0 +1,50 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{{product.id}}
+
+
+
+<section id="cards">
+        
+    <div class="container">
+        <div class="row">
+         
+            
+            <div class="col-md-4 ">
+                <div class="main-card">
+                    <div class="card">
+                        <div class="img" >
+                            <img src="{{ product.image.url }}" alt="" width="100%" height="100%">
+                        </div>
+                        <div class="list">
+                            <span> <b>Breed:</b></span> <span> {{product.name}}</span> <br>
+                            <span> <b>price:</b></span> <span> {{product.prize}}</span> <br>
+                            <span> <b>sex:</b></span> <span> {{product.sex}}</span>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+    </div>
+
+      
+
+</section>
+
+<section id="button">
+    <div class="main_button">
+        <a href="/myapp/update/{{product.id}}" >Update</a>
+        <a href=""></a>
+    </div>
+
+</section>
+
+
+
+
+{% endblock %}
